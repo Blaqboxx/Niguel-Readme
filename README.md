@@ -43,7 +43,7 @@
 
 ## Status
 
-This repository currently documents the platform. The platform has working implementations across local inference, FastAPI services, voice integration, and the read-only workspace adapter, running on the builder's own lab. Not every subsystem is enabled in every deployment — verify the running configuration before demos or claims. Live now: a hallucination guard in the backend — grounded chat answers plus reply scrubbing — wired to a YOLO person detector and vision yes/no answering.
+This repository currently documents the platform. The platform has working implementations across local inference, FastAPI services, voice integration, and the read-only workspace adapter, running on the builder's own lab. Not every subsystem is enabled in every deployment — verify the running configuration before demos or claims. Live now: a hallucination guard in the backend — grounded chat answers plus reply scrubbing — wired to a YOLO person detector and vision yes/no answering — and an operator restart button in the UI (POST /admin/restart, polls /health until the backend is back).
 
 Roadmap: source publication, reproducible setup docs with a tested quickstart and health check, automated boundary/latency tests, demo clip, sanitized demo assets.
 
