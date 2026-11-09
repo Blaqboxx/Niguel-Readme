@@ -10,7 +10,7 @@
 - **Agent backend & orchestration:** Python/FastAPI services connecting inference, tools, and integrations as modular components — not a monolithic chatbot.
 - **Controlled VS Code/workspace integration:** read-only adapter for listing/reading/searching workspace files, Git status/diffs, and diagnostics — with server-configured roots, path-traversal and symlink-escape rejection, and sensitive paths (`.git`, `.env*`, credentials) restricted.
 - **Voice integration:** Alexa path via AWS Lambda and a custom backend; recorded backend latency **3.05s** against a 6-second response constraint.
-- **Systems work:** model serving, Linux infrastructure, networking, diagnostics, and hardware/software integration on a self-built lab (Ryzen 7, AMD RX 6700 XT, NUC-based services).
+- **Systems work:** model serving, Linux infrastructure, networking, diagnostics, and hardware/software integration on a self-built lab (Ryzen 7, AMD RX 9060 XT + RX 580, NUC-based services).
 
 ## Architecture at a glance
 
@@ -43,7 +43,7 @@
 
 ## Status
 
-This repository currently documents the platform. The platform has working implementations across local inference, FastAPI services, voice integration, and the read-only workspace adapter, running on the builder's own lab. Not every subsystem is enabled in every deployment — verify the running configuration before demos or claims. Live now: a hallucination guard in the backend — grounded chat answers plus reply scrubbing — wired to a YOLO person detector and vision yes/no answering — and an operator restart button in the UI (POST /admin/restart, polls /health until the backend is back).
+This repository currently documents the platform. The platform has working implementations across local inference, FastAPI services, voice integration, and the read-only workspace adapter, running on the builder's own lab. Not every subsystem is enabled in every deployment — verify the running configuration before demos or claims. Live now: a hallucination guard in the backend — grounded chat answers plus reply scrubbing — wired to a YOLO person detector and vision yes/no answering — and an operator restart button in the UI (POST /admin/restart, polls /health until the backend is back). Console metrics are live too — the dashboard's Health/CPU/Memory/Disk/Net cards now read real values from the backend, and the live cognitive stream authenticates with the operator session token.
 
 Roadmap: source publication, reproducible setup docs with a tested quickstart and health check, automated boundary/latency tests, demo clip, sanitized demo assets.
 
